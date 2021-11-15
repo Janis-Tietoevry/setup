@@ -8,10 +8,15 @@ protected:
 
 	virtual void SetUp() {
 	}
+
+    Xx x;
 };
 
 TEST_F (XXTest, TestXXName){
-    Xx x{};
 	ASSERT_EQ("XX", x.getXx());
 }
 
+TEST(XxNoFixture, TestGetXX) {
+    Xx x{};
+    ASSERT_EQ("XX", x.getXx());
+}
