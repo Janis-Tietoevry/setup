@@ -4,11 +4,11 @@ project(Setup)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
-add_executable(Xx_run main.cpp)
+add_executable(application main.cpp)
 
-include_directories(xx_files)
-add_subdirectory(xx_files)
+include_directories(team-1-files)
+add_subdirectory(team-1-files)
 
-target_link_libraries(Xx_run xx_lib)
+target_link_libraries(application team_1_lib)
 
 add_subdirectory(Google_tests)

@@ -5,8 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR}})
 
-add_executable(xx_tests_run XXTest.cpp)
+add_executable(team_1_tests_run XXTest.cpp)
 
-target_link_libraries(xx_tests_run xx_lib)
+target_link_libraries(team_1_tests_run team_1_lib)
 
-target_link_libraries(xx_tests_run gtest gmock gtest_main)
+target_link_libraries(team_1_tests_run gtest gmock gtest_main)
