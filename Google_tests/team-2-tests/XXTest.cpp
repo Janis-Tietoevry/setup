@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include "Xx.h"
+#include "Team2Xx.h"
 
 class XXTest: public testing::Test {
 
@@ -9,7 +9,7 @@ protected:
 	virtual void SetUp() {
 	}
 
-    Xx x;
+    Team2Xx x;
 };
 
 TEST_F (XXTest, TestXXName){
@@ -17,6 +17,6 @@ TEST_F (XXTest, TestXXName){
 }
 
 TEST(XxNoFixture, TestGetXX) {
-    Xx x{};
+    Team2Xx x{};
     ASSERT_EQ("XX", x.getXx());
 }
