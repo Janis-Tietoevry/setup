@@ -2,6 +2,7 @@
 project(Google_tests)
 
 add_subdirectory(team-1-tests)
+add_subdirectory(team-2-tests)
 
 include(FetchContent)
 FetchContent_Declare(
