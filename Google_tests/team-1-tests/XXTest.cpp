@@ -13,10 +13,10 @@ protected:
 };
 
 TEST_F (XXTest, TestXXName){
-	ASSERT_EQ("XX", x.getXx());
+	ASSERT_EQ("Team-1 XX", x.getXx());
 }
 
 TEST(XxNoFixture, TestGetXX) {
     Team1Xx x{};
-    ASSERT_EQ("XX", x.getXx());
+    ASSERT_EQ("Team-1 XX", x.getXx());
 }

@@ -1,11 +1,11 @@
 
-#include "Team2Xx.h"
+#include "Team3Xx.h"
 
 
-Team2Xx::Team2Xx()
+Team3Xx::Team3Xx()
 {}
 
 
-const std::string Team2Xx::getXx() const {
-    return "Team-1 XX";
+const std::string Team3Xx::getXx() const {
+    return "Team-3 XX";
 }

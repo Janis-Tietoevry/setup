@@ -1,16 +1,16 @@
-#ifndef TEAM2XX_H_
-#define TEAM2XX_H_
+#ifndef TEAM3XX_H_
+#define TEAM3XX_H_
 
 #include <string>
 #include <iostream>
 
-class Team2Xx {
+class Team3Xx {
 public:
-  Team2Xx();
-  virtual ~Team2Xx() =default;
+  Team3Xx();
+  virtual ~Team3Xx() =default;
   const std::string getXx() const;
 private:
 };
 
 
-#endif /* TEAM1XX2_H_ */
+#endif /* TEAM3XX_H_ */
