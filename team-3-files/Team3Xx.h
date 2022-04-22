@@ -8,9 +8,8 @@ class Team3Xx {
 public:
   Team3Xx();
   virtual ~Team3Xx() =default;
-  const std::string getXx() const;
+  int calculate(const std::string& expr) const;
 private:
 };
-
 
 #endif /* TEAM3XX_H_ */
