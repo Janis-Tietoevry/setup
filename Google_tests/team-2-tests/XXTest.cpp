@@ -72,3 +72,38 @@ TEST_F(XXTest, TestComment) {
     };
     ASSERT_EQ(3, counter.CountLines(exampleStringWithComment));
 }
+
+TEST_F(XXTest, TestBigComment) {
+    const std::vector<std::string> exampleStringWithBigComment = {
+        "/*",
+        "This main function is sure that one plus one is the same as two",
+        "*/",
+        "main() {",
+        "    1 + 1 == 2;",
+        "}"
+    };
+    ASSERT_EQ(3, counter.CountLines(exampleStringWithBigComment));
+}
+
+TEST_F(XXTest, TestBigCommentSameLine) {
+    const std::vector<std::string> exampleStringWithBigCommentSameLine = {
+        "/* This main function is sure that one plus one is the same as two */",
+        "main() {",
+        "    1 + 1 == 2;",
+        "}"
+    };
+    ASSERT_EQ(3, counter.CountLines(exampleStringWithBigCommentSameLine));
+}
+
+TEST_F(XXTest, TestBigCommentTwiceOpened) {
+    const std::vector<std::string> exampleStringWithBigCommentTwiceOpened = {
+        "/*",
+        "/*",
+        "  This main function is sure that one plus one is the same as two",
+        "*/",
+        "main() {",
+        "    1 + 1 == 2;",
+        "}"
+    };
+    ASSERT_EQ(3, counter.CountLines(exampleStringWithBigCommentTwiceOpened));
+}

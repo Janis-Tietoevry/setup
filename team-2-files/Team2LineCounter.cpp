@@ -30,9 +30,29 @@ inline std::string trim(std::string& str)
 const int Team2LineCounter::CountLines(std::vector<std::string> content) const
 {
     int lineCount = 0;
+    bool skipBigCommentBlob = false;
 
     for (auto &a : content) {
         a = trim(a);
+        if (a.find("/*") != a.npos && a.find("*/") != a.npos)   // multiline big comment
+        {
+            continue;
+        }
+
+        if (a.find("/*") != a.npos)   // multiline big comment
+        {
+            skipBigCommentBlob = true;
+            continue;
+        }
+
+        if (a.find("*/") != a.npos)   // multiline big comment
+        {
+            skipBigCommentBlob = false;
+            continue;
+        }
+
+        if(skipBigCommentBlob)
+            continue;
 
         if (a.empty())
             continue;
