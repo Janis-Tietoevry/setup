@@ -30,7 +30,45 @@ TEST_F (XXTest, TestStringWithThreeLines)
     ASSERT_EQ(3, counter.CountLines(exampleStringWithThreeLines));
 }
 
-//TEST_F(XXTest, TestNamespace) {
-//    const std::string exampleNamespace = "namespace testNamespace { }";
-//    ASSERT_EQ(1, counter.CountLines(exampleNamespace));
-//}
+TEST_F (XXTest, TestStringWithSpaces) 
+{
+    const std::vector<std::string> exampleStringWithSpaces = {
+        "main() {",
+        "    ",
+        "}"
+    };
+    ASSERT_EQ(2, counter.CountLines(exampleStringWithSpaces));
+}
+
+TEST_F (XXTest, TestInclude) 
+{
+    const std::vector<std::string> exampleStringWithInclude = {
+        "#include <string>",
+        "main() {",
+        "    std::string value = \"Value\"",
+        "}"
+    };
+    ASSERT_EQ(3, counter.CountLines(exampleStringWithInclude));
+}
+
+
+TEST_F(XXTest, TestNamespace) {
+    const std::vector<std::string> exampleStringWithNamespace = {
+        "#import <string>",
+        "using namespace std",
+        "main() {",
+        "    string value = \"Value\"",
+        "}"
+    };
+    ASSERT_EQ(4, counter.CountLines(exampleStringWithNamespace));
+}
+
+TEST_F(XXTest, TestComment) {
+    const std::vector<std::string> exampleStringWithComment = {
+        "// This main function is sure that one plus one is the same as two",
+        "main() {",
+        "    1 + 1 == 2;",
+        "}"
+    };
+    ASSERT_EQ(3, counter.CountLines(exampleStringWithComment));
+}
